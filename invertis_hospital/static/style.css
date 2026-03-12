@@ -1,0 +1,331 @@
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+font-size:14px;
+
+background-image:url("/static/college.png");
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+background-attachment:fixed;
+}
+
+
+/* Sidebar */
+
+.sidebar{
+width:220px;
+height:100vh;
+background:linear-gradient(180deg,#1e3a8a,#2563eb);
+position:fixed;
+color:white;
+padding-top:20px;
+font-size:16px;
+box-shadow:4px 0 10px rgba(0,0,0,0.2);
+}
+
+
+/* Logo */
+
+.logo{
+text-align:center;
+margin-bottom:20px;
+}
+
+.logo img{
+width:70px;
+height:70px;
+border-radius:50%;
+margin-bottom:10px;
+border:3px solid white;
+}
+
+.logo h2{
+font-size:21px;
+}
+
+
+/* Sidebar Links */
+
+.sidebar a{
+display:block;
+padding:12px 20px;
+color:white;
+text-decoration:none;
+font-size:16px;
+transition:0.3s;
+}
+
+.sidebar a:hover{
+background:#1e40af;
+padding-left:25px;
+}
+
+
+/* Delete History Menu */
+
+.delete-menu{
+background:#7c3aed;
+margin-top:20px;
+border-radius:6px;
+}
+
+.delete-menu:hover{
+background:#dc2626;
+}
+
+
+/* Main Section */
+
+.main{
+margin-left:240px;
+padding:30px;
+min-height:100vh;
+font-size:15px;
+}
+
+
+/* Headings */
+
+h1{
+font-size:32px;
+}
+
+h2{
+font-size:26px;
+}
+
+h3{
+font-size:21px;
+}
+
+.page-title{
+font-size:27px;
+}
+
+
+/* Banner */
+
+.banner{
+background:linear-gradient(120deg,#2563eb,#22c55e);
+color:white;
+padding:40px;
+border-radius:12px;
+text-align:center;
+margin-bottom:25px;
+animation:slideDown 1s ease;
+box-shadow:0 10px 20px rgba(0,0,0,0.2);
+}
+
+.banner h1{
+font-size:34px;
+}
+
+
+/* Cards Section */
+
+.cards{
+display:flex;
+gap:20px;
+margin-top:20px;
+flex-wrap:wrap;
+}
+
+
+/* Card Base */
+
+.card{
+padding:25px;
+width:220px;
+border-radius:14px;
+box-shadow:0 10px 20px rgba(0,0,0,0.2);
+text-align:center;
+color:white;
+transition:0.4s;
+cursor:pointer;
+position:relative;
+overflow:hidden;
+}
+
+
+/* Different Card Colors */
+
+.card:nth-child(1){
+background:linear-gradient(135deg,#06b6d4,#3b82f6);
+}
+
+.card:nth-child(2){
+background:linear-gradient(135deg,#22c55e,#16a34a);
+}
+
+.card:nth-child(3){
+background:linear-gradient(135deg,#f59e0b,#ef4444);
+}
+
+.card:nth-child(4){
+background:linear-gradient(135deg,#8b5cf6,#6366f1);
+}
+
+
+/* Card Text */
+
+.card h2{
+font-size:34px;
+margin-bottom:10px;
+}
+
+.card p{
+font-size:16px;
+}
+
+
+/* Hover Animation */
+
+.card:hover{
+transform:translateY(-12px) scale(1.05);
+box-shadow:0 18px 30px rgba(0,0,0,0.3);
+}
+
+
+/* Shine Animation */
+
+.card::before{
+content:"";
+position:absolute;
+top:0;
+left:-75%;
+width:50%;
+height:100%;
+background:rgba(255,255,255,0.3);
+transform:skewX(-25deg);
+transition:0.6s;
+}
+
+.card:hover::before{
+left:120%;
+}
+
+
+/* Forms */
+
+form label{
+font-size:16px;
+}
+
+form input, form select{
+font-size:14px;
+padding:10px;
+border-radius:6px;
+border:1px solid #ccc;
+}
+
+button{
+font-size:14px;
+padding:10px 16px;
+background:#2563eb;
+color:white;
+border:none;
+border-radius:6px;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:#1d4ed8;
+transform:scale(1.05);
+}
+
+
+/* Table */
+
+table{
+width:100%;
+margin-top:20px;
+border-collapse:collapse;
+background:white;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 5px 15px rgba(0,0,0,0.15);
+}
+
+table th{
+background:#2563eb;
+color:white;
+padding:12px;
+font-size:18px;
+}
+
+table td{
+padding:10px;
+border-bottom:1px solid #ddd;
+text-align:center;
+font-size:14px;
+}
+
+table tr:hover{
+background:#f1f5f9;
+}
+
+
+/* Animations */
+
+@keyframes slideDown{
+
+from{
+opacity:0;
+transform:translateY(-40px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+/* Delete Button Position */
+
+.delete-btn-box{
+position:fixed;
+bottom:25px;
+left:25px;
+z-index:999;
+}
+
+
+/* 3D Delete Button */
+
+.delete-btn{
+background:linear-gradient(145deg,#ff4d4d,#b30000);
+color:white;
+border:none;
+padding:14px 22px;
+font-size:15px;
+border-radius:12px;
+cursor:pointer;
+
+box-shadow:
+0 6px #7a0000,
+0 12px 20px rgba(0,0,0,0.3);
+
+transition:all 0.2s ease;
+}
+
+
+/* Hover Effect */
+
+.delete-btn:hover{
+transform:translateY(-3px);
+box-shadow:
+0 9px #7a0000,
+0 15px 25px rgba(0,0,0,0.35);
+}
+
+
+/* Click Effect */
+
+.delete-btn:active{
+transform:translateY(5px);
+box-shadow:
+0 2px #7a0000,
+0 5px 10px rgba(0,0,0,0.2);
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Appointments</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+<h2>Invertis Hospital</h2>
+
+<a href="/">Dashboard</a>
+<a href="/doctors">Doctors</a>
+<a href="/patients">Patients</a>
+<a href="/disease">Disease</a>
+<a href="/book">Book Appointment</a>
+<a href="/appointments">Appointments</a>
+
+</div>
+
+
+<div class="main">
+
+<h1>All Appointments</h1>
+
+<table>
+
+<tr>
+
+<th>Patient</th>
+<th>Doctor</th>
+<th>Disease</th>
+<th>Date</th>
+
+</tr>
+
+{% for a in appointments %}
+
+<tr>
+
+<td>{{ a.patient }}</td>
+<td>{{ a.doctor }}</td>
+<td>{{ a.disease }}</td>
+<td>{{ a.date }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+</body>
+
+</html>

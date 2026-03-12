@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Invertis Hospital</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<!-- Sidebar -->
+<div class="sidebar">
+
+<div class="logo">
+<img src="{{ url_for('static', filename='logo.png') }}" width="40">
+<h3>Invertis Hospital</h3>
+</div>
+
+<a href="/">Dashboard</a>
+<a href="/doctor">Doctors</a>
+<a href="/patient">Patients</a>
+<a href="/disease">Disease</a>
+<a href="/book">Book Appointment</a>
+<a href="/appointments">Appointments</a>
+
+</div>
+
+
+<!-- Delete History Button -->
+<div class="delete-btn-box">
+<a href="/delete_all">
+<button class="delete-btn">Delete History</button>
+</a>
+</div>
+
+
+<!-- Main -->
+<div class="main">
+
+<div class="header">
+<h2>Welcome to Invertis Hospital</h2>
+<p>Hospital Appointment Management System</p>
+</div>
+
+
+<!-- Dashboard Cards -->
+<div class="cards">
+
+<div class="card">
+<h2>{{ patientCount }}</h2>
+<p>Total Patients</p>
+</div>
+
+<div class="card">
+<h2>{{ doctorCount }}</h2>
+<p>Total Doctors</p>
+</div>
+
+<div class="card">
+<h2>{{ appointmentCount }}</h2>
+<p>Appointments</p>
+</div>
+
+<div class="card">
+<h2>{{ diseaseCount }}</h2>
+<p>Diseases</p>
+</div>
+
+</div>
+
+
+<!-- Appointment Table -->
+<h2>Appointments</h2>
+
+<table border="1" cellpadding="10">
+
+<tr>
+<th>Patient</th>
+<th>Doctor</th>
+<th>Disease</th>
+<th>Date</th>
+</tr>
+
+{% for a in appointments %}
+
+<tr>
+<td>{{ a.patient }}</td>
+<td>{{ a.doctor }}</td>
+<td>{{ a.disease }}</td>
+<td>{{ a.date }}</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+</body>
+</html>

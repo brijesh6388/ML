@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Add Disease</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="sidebar">
+<h2>Invertis Hospital</h2>
+
+<a href="/">Dashboard</a>
+<a href="/doctor">Doctors</a>
+<a href="/patient">Patients</a>
+<a href="/disease">Disease</a>
+<a href="/book">Book Appointment</a>
+<a href="/appointments">Appointments</a>
+
+</div>
+
+<div class="main">
+
+<h2>Add Disease</h2>
+
+<form method="POST" action="/disease">
+
+<label>Disease Name</label>
+
+<input type="text" name="name" required>
+
+<button type="submit">Add Disease</button>
+
+</form>
+
+</div>
+
+</body>
+</html>

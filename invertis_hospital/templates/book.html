@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Book Appointment</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="sidebar">
+<h2>Invertis Hospital</h2>
+
+<a href="/">Dashboard</a>
+<a href="/doctor">Doctors</a>
+<a href="/patient">Patients</a>
+<a href="/disease">Disease</a>
+<a href="/book">Book Appointment</a>
+<a href="/appointments">Appointments</a>
+
+</div>
+
+<div class="main">
+
+<h2>Book Appointment</h2>
+
+<form method="POST" action="/book">
+
+<label>Patient</label>
+
+<select name="patient">
+
+{% for p in patients %}
+
+<option value="{{ p.name }}">{{ p.name }}</option>
+
+{% endfor %}
+
+</select>
+
+
+<label>Doctor</label>
+
+<select name="doctor">
+
+{% for d in doctors %}
+
+<option value="{{ d.name }}">{{ d.name }}</option>
+
+{% endfor %}
+
+</select>
+
+
+<label>Disease</label>
+
+<select name="disease">
+
+{% for d in diseases %}
+
+<option value="{{ d.name }}">{{ d.name }}</option>
+
+{% endfor %}
+
+</select>
+
+
+<label>Date</label>
+
+<input type="date" name="date" required>
+
+<button type="submit">Book Appointment</button>
+
+</form>
+
+</div>
+
+</body>
+</html>
